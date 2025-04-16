@@ -1,0 +1,26 @@
+{
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "files.autoSave": "off",
+    "[javascript]": {
+      "editor.tabSize": 2
+    },
+    "[typescript]": {
+      "editor.tabSize": 2
+    },
+    "[css]": {
+      "editor.tabSize": 2
+    },
+    "[scss]": {
+      "editor.tabSize": 2
+    },
+    "[html]": {
+      "editor.tabSize": 2
+    },
+    "[typescriptreact]": {
+      "editor.tabSize": 2
+    },
+    "editor.rulers": [
+      100
+    ]
+  }
