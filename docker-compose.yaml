@@ -6,5 +6,32 @@ services:
     container_name: frontend-cnt
     volumes:
       - ./frontend:/frontend
-      - /frontend/node_modules 
+      - frontend_node_modules:/frontend/node_modules
     command: npm run dev -- --host
+
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    container_name: backend-cnt
+    volumes:
+      - ./backend:/backend
+      - backend_node_modules:/backend/node_modules
+    depends_on:
+      - db
+    command: npm run dev
+
+  db:
+    image: mysql:8.4.5
+    restart: always
+    container_name: mysql-cnt
+    environment:
+      MYSQL_DATABASE: text-monolith
+      MYSQL_ROOT_PASSWORD: secret
+    volumes:
+      - mysql:/var/lib/mysql
+
+volumes:
+  frontend_node_modules:
+  backend_node_modules:
+  mysql:
